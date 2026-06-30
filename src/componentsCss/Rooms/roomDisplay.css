@@ -1,0 +1,53 @@
+.roomdisplay{
+    height: 60vh;
+}
+
+.roomdisplay{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    padding: 0;   
+}
+
+.card{
+    width: 27vw;
+}
+
+.card img{
+    width: 27vw;
+}
+
+
+.card h2 ,p{
+    color: black;
+    font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    line-height: 1.4;
+}
+
+.card h2{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.card p{
+    font-size: 1.1rem;
+}
+
+.card button{
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 25px;
+    background-color: transparent;
+    color: #937230;
+    border: solid #937230 1px;
+}
+
+.card button:hover{
+    background-color: #937230;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+}
