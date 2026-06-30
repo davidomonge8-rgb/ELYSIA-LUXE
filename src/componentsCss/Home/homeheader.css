@@ -41,7 +41,8 @@
     text-decoration: none;
 }
 
-.headerlinks a:hover {
+.headerlinks a:hover,
+.headerlinks a.active {
     transition: .3s;
     transform: scale(1.04);
     color: #8c7654;

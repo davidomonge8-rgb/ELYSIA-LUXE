@@ -1,9 +1,11 @@
-
+import '../../componentsCss/Rooms/roomdisplay.css'
 function Display(){
     return(
-        <>
-        Room Display
-        </>
+        <div>
+            <div className="roomdisplay">
+                
+            </div>
+        </div>
     )
 }
 
