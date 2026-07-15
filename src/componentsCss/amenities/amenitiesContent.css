@@ -1,0 +1,28 @@
+.amenitiesContent{
+    height: 60vh;
+    
+    display: flex;
+    align-items: center;
+}
+
+
+.amenitiesContentImage img{
+    width: 40vw;
+    margin-left: 11%;
+    margin-right: 100px;
+}
+
+.amenitiesContentDescription{
+    width: 40%;
+    margin-left: 5%;
+    text-align: left;
+    font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+}
+
+.amenitiesContentDescription p{
+    color: #775A19;
+}
+
+.amenitiesContentDescription h1{
+    font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+}
