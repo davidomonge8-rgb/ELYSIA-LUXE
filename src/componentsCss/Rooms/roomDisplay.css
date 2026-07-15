@@ -1,25 +1,33 @@
 .roomdisplay{
-    height: 60vh;
-}
-
-.roomdisplay{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 30px;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    padding: 0;   
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.roomdisplay + .roomdisplay{
+    margin-top: 0;
 }
 
 .card{
-    width: 27vw;
+    flex: 1 1 280px;
+    max-width: 480px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card img{
-    width: 27vw;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
 }
-
 
 .card h2 ,p{
     color: black;
@@ -29,11 +37,13 @@
 
 .card h2{
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    margin: 16px 0 8px;
 }
 
 .card p{
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    margin: 0;
 }
 
 .card button{
@@ -50,4 +60,58 @@
     color: white;
     transition: .3s;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .roomdisplay {
+        gap: 28px;
+        padding: 0 24px;
+        margin-top: 8vh;
+        margin-bottom: 8vh;
+    }
+
+    .card {
+        flex: 1 1 260px;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .roomdisplay {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        padding: 0 24px;
+    }
+
+    .card {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .roomdisplay {
+        gap: 32px;
+        margin-top: 36px;
+        margin-bottom: 36px;
+        padding: 0 18px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card h2 {
+        margin-top: 12px;
+    }
+
+    .card button {
+        margin-top: 16px;
+        width: 100%;
+        max-width: 220px;
+    }
 }
