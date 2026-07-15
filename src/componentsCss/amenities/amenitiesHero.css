@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
 .amenitieshero{
+    min-height: 80vh;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -9,13 +10,14 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 .herocontent{
     color: white;
     text-align: center;
     max-width: 900px;
-    width: 100%;
+    width: 90%;
     padding: 0 24px;
     box-sizing: border-box;
 }
@@ -43,7 +45,7 @@
 }
 
 @media (max-width: 900px) {
-    .hero {
+    .amenitieshero {
         min-height: 75vh;
         height: 75vh;
     }
@@ -59,8 +61,23 @@
     }
 }
 
+@media (max-width: 768px) {
+    .amenitieshero {
+        min-height: 70vh;
+        height: 70vh;
+    }
+
+    .herocontent {
+        width: 100%;
+    }
+
+    .herocontent p {
+        letter-spacing: 0.1em;
+    }
+}
+
 @media (max-width: 480px) {
-    .hero {
+    .amenitieshero {
         min-height: 65vh;
         height: 65vh;
     }
@@ -77,5 +94,6 @@
     .herocontent p {
         padding-top: 14px;
         font-size: 0.95rem;
+        letter-spacing: 0.08em;
     }
 }
