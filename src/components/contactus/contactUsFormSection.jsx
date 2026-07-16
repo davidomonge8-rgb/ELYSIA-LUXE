@@ -1,9 +1,9 @@
-import '../../componentsCss/contactus/ContactUsFormSection.css'
+import '../../componentsCss/contactus/contactUsFormSection.css'
 
 function ContactUsFormSection(){
     return(
         <div className="formSection">
-            <h1>Coming soon</h1>
+            <h1>Form section coming soon</h1>
         </div>
             
     )

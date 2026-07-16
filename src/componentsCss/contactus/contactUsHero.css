@@ -1,25 +1,26 @@
 .contactHero{
-    height: 20vh;
+    height: 13vh;
     padding-top: 3vh;
-    padding-bottom: 5vh;
+    padding-bottom: 0vh;
+    
 }
 
 .contactHero h1{
     font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
     font-weight: 500;
-    font-size: clamp(2.5rem, 4vw, 5rem);
+    font-size: clamp(2rem, 4vw, 5rem);
 }
 
 .contactHero h2{
     font-weight: 400;
-    font-size: clamp(1.2rem, 1.5vw, 3rem);
+    font-size: clamp(1rem, 1.5vw, 3rem);
     width: 50%;
 }
 
 .contactHero h1,h2{
     align-items: center;
-    margin: 10px auto 50px auto;
+    margin: 10px auto 40px auto;
     width: 60%;
     line-height: 1;
-    
+    color :black;
 }
