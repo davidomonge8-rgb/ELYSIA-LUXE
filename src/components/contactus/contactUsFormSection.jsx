@@ -3,7 +3,7 @@ import '../../componentsCss/contactus/ContactUsFormSection.css'
 function ContactUsFormSection(){
     return(
         <div className="formSection">
-            <h1>Hi</h1>
+            <h1>Coming soon</h1>
         </div>
             
     )
