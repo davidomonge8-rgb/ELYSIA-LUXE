@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/home.jsx';
 import Rooms from './pages/rooms.jsx';
 import Amenities from './pages/amenities.jsx';
-import Gallery from './pages/gallery.jsx';
+import ContactUs from './pages/contactUs.jsx';
 import Book from './pages/booknow.jsx'
 
 function App(){
@@ -14,7 +14,7 @@ function App(){
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path='/amenities' element={<Amenities/>} />
-        <Route path='/gallery' element={<Gallery/>} />
+        <Route path='/contact' element={<ContactUs/>} />
         <Route path='/book' element={<Book />} />
       </Routes>
     </BrowserRouter>
