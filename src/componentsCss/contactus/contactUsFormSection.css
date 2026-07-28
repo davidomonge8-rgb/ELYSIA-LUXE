@@ -1,6 +1,278 @@
 .formSection{
-    border: solid black 1px;
-    height: 70vh;
-    margin-top: 10vh;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0;
+    max-width: 1200px;
+    margin: 8vh auto 10vh;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
 
+.formSectionText{
+    flex: 1 1 320px;
+    text-align: left;
+    padding: 48px 40px 48px 0;
+    box-sizing: border-box;
+}
+
+.formSectionText h3{
+    margin: 0 0 40px;
+    font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 500;
+    line-height: 1.35;
+    color: black;
+    max-width: 420px;
+}
+
+.formSectionBlock{
+    margin-bottom: 28px;
+}
+
+.formSectionBlock p{
+    margin: 0 0 10px;
+    color: #775A19;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.formSectionBlock a{
+    display: block;
+    margin: 0 0 6px;
+    color: black;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.formSectionBlock a:hover{
+    color: #775A19;
+}
+
+.formSectionDivider{
+    width: 100%;
+    max-width: 320px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin: 36px 0 24px;
+}
+
+.formSectionIcons{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.formSectionIcons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+}
+
+.formSectionIcons svg{
+    width: 20px;
+    height: 20px;
+}
+
+.formSectionIcons a:hover{
+    color: #775A19;
+}
+
+.formFill{
+    flex: 1 1 420px;
+    background-color: #f3f3f3;
+    padding: 48px 40px;
+    box-sizing: border-box;
+}
+
+.contactForm{
+    width: 100%;
+}
+
+.formRow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.formField{
+    flex: 1 1 200px;
+    min-width: 0;
+    text-align: left;
+}
+
+.formFieldFull{
+    flex: 1 1 100%;
+    margin-bottom: 36px;
+}
+
+.formField label{
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #775A19;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.formField input,
+.formField select,
+.formField textarea{
+    width: 100%;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    color: #555;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9a9a9a;
+    padding: 8px 0 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.formField input::placeholder,
+.formField textarea::placeholder{
+    color: #888;
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus{
+    border-bottom-color: #775A19;
+}
+
+.formField textarea{
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+.selectWrapper{
+    position: relative;
+}
+
+.selectWrapper select{
+    appearance: none;
+    cursor: pointer;
+    padding-right: 24px;
+}
+
+.selectWrapper::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 14px;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid #555;
+    border-bottom: 1.5px solid #555;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.formField input[type="date"]{
+    color: #555;
+}
+
+.formField input[type="date"]::-webkit-calendar-picker-indicator{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.formSubmit{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 14px 28px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formSubmit:hover{
+    background-color: #333;
+}
+
+.formSubmit span{
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+    .formSection {
+        margin-top: 6vh;
+        margin-bottom: 8vh;
+    }
+
+    .formSectionText {
+        padding: 32px 24px 32px 0;
+    }
+
+    .formFill {
+        padding: 36px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formSection {
+        flex-direction: column;
+        padding: 0 24px;
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+
+    .formSectionText {
+        padding: 0 0 32px;
+    }
+
+    .formSectionText h3 {
+        margin-bottom: 28px;
+        max-width: 100%;
+    }
+
+    .formFill {
+        padding: 32px 24px;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .formFieldFull {
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .formSection {
+        padding: 0 18px;
+        margin-top: 36px;
+        margin-bottom: 36px;
+    }
+
+    .formFill {
+        padding: 28px 20px;
+    }
+
+    .formSubmit {
+        width: 100%;
+        justify-content: center;
+    }
 }
