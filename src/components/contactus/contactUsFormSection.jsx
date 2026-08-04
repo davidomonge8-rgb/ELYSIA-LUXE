@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import '../../componentsCss/contactus/contactUsFormSection.css'
 
+import { supabase } from '../../config/supabaseClient.js'
+
+
+
 function ContactUsFormSection(){
     const [formData, setFormData] = useState({
         fullName: '',
@@ -28,7 +32,7 @@ function ContactUsFormSection(){
                 <div className="formSectionBlock">
                     <p>Inquiries</p>
                     <a href="mailto:concierge@elysialuxe.com">concierge@elysialuxe.com</a>
-                    <a href="#">+44 (0) 20 7123 4567</a>
+                    <a href="tel:">+44 (0) 20 7123 4567</a>
                 </div>
 
                 <div className="formSectionBlock">
