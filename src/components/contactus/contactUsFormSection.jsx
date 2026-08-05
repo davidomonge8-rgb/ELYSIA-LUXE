@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import '../../componentsCss/contactus/contactUsFormSection.css'
-
 import { supabase } from '../../config/supabaseClient.js'
 
-
-
-function ContactUsFormSection(){
+function ContactUsFormSection() {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -13,18 +10,55 @@ function ContactUsFormSection(){
         desiredDate: '',
         message: '',
     })
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(false)
 
     const handleChange = (event) => {
         const { name, value } = event.target
         setFormData((prev) => ({ ...prev, [name]: value }))
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        confirm("Confirm send your inquiry")
+        setError(null)
+        setSuccess(false)
+
+        const confirmed = confirm("Confirm send your inquiry")
+        if (!confirmed) return
+
+        setLoading(true)
+
+        const { error } = await supabase
+            .from('Inquiries')
+            .insert([
+                {
+                    full_Name: formData.fullName,
+                    email: formData.email,
+                    subject: formData.subject,
+                    desired_Date: formData.desiredDate || "",
+                    message: formData.message,
+                }
+            ])
+
+        setLoading(false)
+
+        if (error) {
+            console.error('Supabase error:', error)
+            setError(error.message || 'Something went wrong. Please try again.')
+        } else {
+            setSuccess(true)
+            setFormData({
+                fullName: '',
+                email: '',
+                subject: 'General Inquiry',
+                desiredDate: '',
+                message: '',
+            })
+        }
     }
 
-    return(
+    return (
         <section className="formSection">
             <div className="formSectionText">
                 <h3>1248 Avenue of Excellence, Belgravia, London SW1X 7XL</h3>
@@ -68,6 +102,9 @@ function ContactUsFormSection(){
 
             <div className="formFill">
                 <form className="contactForm" onSubmit={handleSubmit}>
+                    {error && <div className="formError">{error}</div>}
+                    {success && <div className="formSuccess">Inquiry sent successfully!</div>}
+
                     <div className="formRow">
                         <div className="formField">
                             <label htmlFor="fullName">Full Name</label>
@@ -140,9 +177,10 @@ function ContactUsFormSection(){
                         />
                     </div>
 
-                    <button type="submit" className="formSubmit">
-                        Send Inquiry <span aria-hidden="true">→</span>
-                    </button>
+                    <button type="submit" className="formSubmit" disabled={loading}>
+                        {loading ? 'Sending...' : 'Send Inquiry'}
+                        <span aria-hidden="true"></span>
+                    </button> 
                 </form>
             </div>
         </section>

@@ -219,6 +219,29 @@
     line-height: 1;
 }
 
+.formError {
+  color: #e74c3c;
+  background: #fdeaea;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.formSuccess {
+  color: #27ae60;
+  background: #e9f7ef;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.formSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 1024px) {
     .formSection {
         margin-top: 6vh;
