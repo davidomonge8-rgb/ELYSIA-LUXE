@@ -9,13 +9,15 @@ function Footer(){
     const [statusMsg, setStatusMsg] = useState('')
 
     const handleSendRequest = async () => {
-        //email vali
         if(!email.trim() || !email.includes('@')){
-            setStatusMsg('Enter a valid Email')
+            setStatusMsg('Invalid email')
+            setEmail('')
+        }else{
+            setLoading(true)
+            setStatusMsg('')
         }
 
-        setLoading(true)
-        setStatusMsg('')
+            
 
         const {error} = await supabase.from('newsLetter').insert([{Email_Address: email}])
 
@@ -69,11 +71,11 @@ function Footer(){
                 <p>Join our inner circle for exclusive updates and seasonal offers.</p>
                 <input type="text" placeholder='Email Address' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 
-                <button className='newsLetterButton' onClick={handleSendRequest} disabled={loading}>
+                <button className='newsLetterButton' onClick={handleSendRequest} >
                     {loading ? 'Sending...' : 'Send Request'} 
                 </button>
 
-                {statusMsg && ( <p style={{ marginTop: '8px', fontSize: '0.9rem', color: statusMsg.includes('wrong') ? '#c0392b' : '#27ae60' }}> {statusMsg}</p>)}
+                {statusMsg && ( <p style={{ marginTop: '8px', fontSize: '0.9rem', color: statusMsg.includes('wrong')|| statusMsg.includes('Invalid') ? '#c0392b' : '#27ae60' }}> {statusMsg}</p>)}
             
 
             </div>
