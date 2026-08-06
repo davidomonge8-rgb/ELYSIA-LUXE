@@ -25,6 +25,7 @@
     line-height: 1.5;
     color: black;
     max-width: 800px;
+    
 }
 
 .spacesexample{
@@ -63,10 +64,11 @@
 
 .spacesexample h2{
     color: black;
-    margin: 8px 0;
+    margin: 8px auto;
     font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     text-align: center;
+    
 }
 
 .spacesexample h3{
@@ -82,18 +84,22 @@
 .spacesexample h4{
     color: black;
     font-weight: 400;
-    margin: 0;
+    margin: 0 auto;
     text-decoration-color: #8c7654;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
     text-align: center;
+    border: solid #8c7654 2px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .spacesexample h4:hover{
     transition: .3s;
-    text-decoration: underline;
+    background-color: #8c7654;
     cursor: pointer;
-    color: #8c7654;
+    color: white;
 }
 
 @media (max-width: 1024px) {
