@@ -1,0 +1,11 @@
+.bookNowHero{
+    height: 10vh;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: -6vh;
+}
+
+.bookNowHero h1{
+    font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
+    font-size: clamp(1rem, 3rem, 4rem);
+}
