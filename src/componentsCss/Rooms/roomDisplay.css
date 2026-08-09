@@ -294,6 +294,10 @@
     background-color: #7a5f28;
 }
 
+form input{
+    background-color: transparent;
+}
+
 /* Modal mobile adjustments */
 @media (max-width: 480px) {
     .modal-content {

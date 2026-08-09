@@ -44,7 +44,8 @@ function Display() {
     setError(null);
 
     try {
-      const { data, error: supabaseError } = await supabase
+      // 1. Save booking to database
+      const { data: bookingData, error: dbError } = await supabase
         .from('bookings')
         .insert([
           {
@@ -56,9 +57,24 @@ function Display() {
         ])
         .select();
 
-      if (supabaseError) throw supabaseError;
+      if (dbError) throw dbError;
 
-      console.log('Booking saved:', data);
+      // 2. Send confirmation email via Edge Function
+      const { error: emailError } = await supabase.functions.invoke(
+        'send-booking-confirmation',
+        {
+          body: { 
+            email: email, 
+            room_name: selectedRoom 
+          }
+        }
+      );
+
+      // If email fails, we still show success but log the error
+      if (emailError) {
+        console.warn('Email failed to send:', emailError);
+      }
+
       setIsBooked(true);
     } catch (err) {
       console.error('Booking error:', err);

@@ -7,5 +7,5 @@
 
 .bookNowHero h1{
     font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
-    font-size: clamp(1rem, 3rem, 4rem);
+    font-size: clamp(.5rem, 2.5rem, 4rem);
 }

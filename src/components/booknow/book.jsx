@@ -5,7 +5,7 @@ export function Booknow(){
     return(
         <div>
             <div className="bookNowHero">
-                <h1>Book Your Stay Here</h1>
+                <h1 style={{color:'black'}}>Book Your Stay Here</h1>
             </div>
         <Display/>
 
